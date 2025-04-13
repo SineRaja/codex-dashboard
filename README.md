@@ -1,40 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Codex Search Analytics Dashboard
+
+A high-performance analytics dashboard for visualizing search trend data across competitors, built with Next.js, TypeScript, and Recharts.
+
+## Overview
+
+This dashboard provides interactive visualizations of search performance data, allowing users to analyze competitor search trends over time. It features a monthly line chart and quarterly heatmap visualization with comprehensive filtering capabilities.
+
+## Tech Stack
+
+- **Frontend**: Next.js 15.x with TypeScript
+- **Styling**: Tailwind CSS
+- **Data Visualization**: Recharts (line chart), custom implementation (heatmap)
+- **State Management**: React Hooks with context
+- **Data Fetching**: SWR with custom caching strategies
+- **Deployment**: Vercel
+
+## Features
+
+- Interactive search trend visualizations
+- Comprehensive filtering system
+- Responsive design for all device sizes
+- WCAG 2.2 AA compliant accessibility
+- Performance-optimized with code splitting and memoization
+- Secure implementation with proper CSP headers
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/your-username/codex-dashboard.git
+cd codex-dashboard
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be available at http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Production Build
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+# Create optimized production build
+npm run build
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+# Run production build locally
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+/src
+  /components
+    /filters        # Filter components
+    /layout         # Layout components (header, navigation)
+    /shared         # Reusable UI components
+    /visualizations # Data visualization components
+  /lib
+    /api           # API functions
+    /hooks         # Custom React hooks
+    /utils         # Utility functions
+  /types           # TypeScript type definitions
+  /pages           # Next.js pages
+  /styles          # Global styles
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Performance Optimizations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+- React.memo for heavy components
+- Code splitting with dynamic imports
+- SWR for efficient data fetching and caching
+- Responsive image optimization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Accessibility
 
-## Deploy on Vercel
+This project follows WCAG 2.2 AA guidelines:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Proper semantic HTML
+- ARIA attributes for interactive elements
+- Keyboard navigation support
+- Color contrast compliance
+- Screen reader support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+## Security
+
+Security measures implemented:
+
+- Content Security Policy (CSP)
+- HTTP security headers
+- Input validation
+- XSS protection
+
+## CI/CD
+
+Continuous integration and deployment is set up with GitHub Actions:
+
+- Automated linting and type checking
+- Build verification
+- Automatic deployment to Vercel
+
+## Architecture Overview
+
+The application follows a component-based architecture with clear separation of concerns:
+
+1. **UI Layer**: React components for visualization and user interaction
+2. **Data Layer**: SWR-based hooks for data fetching with caching
+3. **State Layer**: React context for global state management
+4. **API Layer**: Typed API client for data retrieval
+
