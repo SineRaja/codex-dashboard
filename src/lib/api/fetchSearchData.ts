@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { SearchData, MonthlySearchDataPoint, QuarterlyHeatmapDataPoint, Quarter } from '../../lib/types/searchTypes';
 
 /**
@@ -9,10 +10,10 @@ import { SearchData, MonthlySearchDataPoint, QuarterlyHeatmapDataPoint, Quarter 
  * @returns Promise with search data
  */
 export const fetchSearchData = async (
-  clientId: string,
-  companyId: string,
-  websiteId: string,
-  segmentId: string
+  _clientId: string,
+  _companyId: string,
+  _websiteId: string,
+  _segmentId: string
 ): Promise<SearchData> => {
   try {
     // In a real app, you would fetch from an actual API endpoint

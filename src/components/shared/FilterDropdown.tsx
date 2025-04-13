@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FilterOption } from '../../types/searchTypes';
+import { FilterOption } from '../../lib/types/searchTypes';
 
 interface FilterDropdownProps {
   label: string;

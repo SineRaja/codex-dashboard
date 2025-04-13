@@ -23,7 +23,7 @@ const COMPETITOR_ORDER = [
 const YEARS = ['2019', '2020', '2021', '2022', '2023'];
 const QUARTERS = ['Q2', 'Q3', 'Q4', 'Q1'];
 
-const QuarterlyHeatmap: React.FC<QuarterlyHeatmapProps> = ({ data, competitors }) => {
+const QuarterlyHeatmap: React.FC<QuarterlyHeatmapProps> = ({ data }) => {
  
   const getColorizedCell = (competitor: string, value: number) => { 
     const colorMap: Record<string, Record<string, string>> = {

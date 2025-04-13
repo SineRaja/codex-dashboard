@@ -13,7 +13,10 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
             media="print"
-            onLoad="this.media='all'"
+            onLoad={(e) => {
+              const link = e.currentTarget as HTMLLinkElement;
+              link.media = 'all';
+            }}
           />
         </Head>
         <body>

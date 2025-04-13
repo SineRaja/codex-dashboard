@@ -10,11 +10,11 @@ interface UseSearchDataProps {
 interface UseSearchDataReturn {
   data: SearchData | null;
   isLoading: boolean;
-  error: any;
-  mutate: () => Promise<any>;
+  error: unknown;
+  mutate: () => Promise<unknown>;
 }
  
-const fetcher = async ([_, clientId, companyId, websiteId, segmentId]: [string, string, string, string, string]) => {
+const fetcher = async ([clientId, companyId, websiteId, segmentId]: [string, string, string, string, string]) => {
   return fetchSearchData(clientId, companyId, websiteId, segmentId);
 };
 

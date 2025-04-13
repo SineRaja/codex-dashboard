@@ -14,6 +14,10 @@ interface MonthlyLineChartProps {
   data: MonthlySearchDataPoint[];
   competitors: string[];
 }
+interface FormattedChartPoint {
+  name: string;
+  [competitor: string]: string | number;
+}
 
 const COLORS = {
   'Cliveden House': '#01FFFF', // teal
@@ -37,15 +41,16 @@ const VISIBLE_COMPETITORS = [
   'Old Course Hotel',
 ];
 
-const MonthlyLineChart: React.FC<MonthlyLineChartProps> = ({ data, competitors }) => {
-  const [formattedData, setFormattedData] = useState<any[]>([]);
+const MonthlyLineChart: React.FC<MonthlyLineChartProps> = ({ data }) => {
+  const [formattedData, setFormattedData] = useState<FormattedChartPoint[]>([]);
   
   useEffect(() => {
     if (data && data.length > 0) { 
       const chartData = data.map(point => { 
-        const formattedPoint: any = {
+        const formattedPoint: FormattedChartPoint = {
           name: `${point.month}/${point.year.slice(-2)}`
         };
+        
          
         Object.entries(point.competitors).forEach(([competitor, value]) => {
           if (VISIBLE_COMPETITORS.includes(competitor)) {
