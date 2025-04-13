@@ -1,7 +1,19 @@
 # Codex Search Analytics Dashboard
 
 A high-performance analytics dashboard for visualizing search trend data across competitors, built with Next.js, TypeScript, and Recharts.
+1. 🔥 Lighthouse (Google Chrome DevTools) 
+Built into Chrome DevTools → Right-click > Inspect > "Lighthouse" tab  Tests: Performance, Accessibility, SEO, PWA, Best Practices
+![image](https://github.com/user-attachments/assets/46e30107-b184-4ba6-9563-8b945432f09a)
 
+![image](https://github.com/user-attachments/assets/b4e34454-3179-4787-85b9-643c84e80759)
+2. 🌐 PageSpeed Insights
+Google’s web version of Lighthouse, Tests your live website URL and gives scores for: 
+Suggests real-world optimizations
+![image](https://github.com/user-attachments/assets/67af4c20-16e4-4646-bedb-b69f935d13db)
+3. 🧪 GTmetrix
+Analyzes page load time, requests, size, and Visual waterfall chart to find slow resources
+![image](https://github.com/user-attachments/assets/c3b1a9f9-9cfb-4473-939f-ea490d7c6ef3)
+ 
 ## Overview
 
 This dashboard provides interactive visualizations of search performance data, allowing users to analyze competitor search trends over time. It features a monthly line chart and quarterly heatmap visualization with comprehensive filtering capabilities.
