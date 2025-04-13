@@ -10,7 +10,7 @@ interface UseSearchDataProps {
 interface UseSearchDataReturn {
   data: SearchData | null;
   isLoading: boolean;
-  error: unknown;
+  error: Error | null;
   mutate: () => Promise<unknown>;
 }
  

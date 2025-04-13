@@ -27,6 +27,8 @@ import ErrorBoundary from '../components/shared/ErrorBoundary';
 import useSearchData from '../lib/hooks/useSearchData';
 import { FilterState } from '../lib/types/searchTypes';
 
+
+
 export default function Home() {
  
   const [filters, setFilters] = useState<FilterState>({
@@ -38,7 +40,8 @@ export default function Home() {
   });
  
   const { data, isLoading, error } = useSearchData({ filters });
- 
+  const safeErrorMessage = error instanceof Error ? error.message : String(error);
+
   const handleClientChange = (clientId: string) => {
     setFilters(prev => ({ ...prev, client: clientId }));
   };
@@ -112,13 +115,14 @@ export default function Home() {
         </div>
          
         <div className="space-y-6"> 
-          {error && (
-            <div className="p-4 bg-red-900 bg-opacity-50 border border-red-700 rounded-lg">
-              <h3 className="mb-2 text-lg font-semibold text-red-300">Error loading data</h3>
-              <p className="text-red-200">{error}</p>
-            </div>
-          )}
-           
+        {error && (
+          <div className="p-4 bg-red-900 bg-opacity-50 border border-red-700 rounded-lg">
+            <h3 className="mb-2 text-lg font-semibold text-red-300">Error loading data</h3>
+            <p className="text-red-200">{safeErrorMessage}</p>
+          </div>
+        )}
+
+
           {isLoading ? (
             <LoadingState />
           ) : (
